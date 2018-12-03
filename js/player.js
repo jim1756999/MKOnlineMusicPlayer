@@ -7,15 +7,15 @@
 // 播放器功能配置
 var mkPlayer = {
     api: "api.php", // api地址
-    loadcount: 20,  // 搜索结果一次加载多少条
+    loadcount: 10,  // 搜索结果一次加载多少条
     method: "POST",     // 数据传输方式(POST/GET)
     defaultlist: 3,    // 默认要显示的播放列表编号
     autoplay: false,    // 是否自动播放(true/false) *此选项在移动端可能无效
-    coverbg: true,      // 是否开启封面背景(true/false) *开启后会有些卡
-    mcoverbg: true,     // 是否开启[移动端]封面背景(true/false)
-    dotshine: true,    // 是否开启播放进度条的小点闪动效果[不支持IE](true/false) *开启后会有些卡
+    coverbg: false,      // 是否开启封面背景(true/false) *开启后会有些卡
+    mcoverbg: false,     // 是否开启[移动端]封面背景(true/false)
+    dotshine: false,    // 是否开启播放进度条的小点闪动效果[不支持IE](true/false) *开启后会有些卡
     mdotshine: false,   // 是否开启[移动端]播放进度条的小点闪动效果[不支持IE](true/false)
-    volume: 0.6,        // 默认音量值(0~1之间)
+    volume: 1,        // 默认音量值(0~1之间)
     version: "v2.41",    // 播放器当前版本号(仅供调试)
     debug: false   // 是否开启调试模式(true/false)
 };
@@ -112,9 +112,12 @@ function audioPlay() {
     {
         clearInterval(rem.titflash);
     }
-    // 标题滚动
+/*
+	// 标题滚动
     titleFlash(msg);
+*/
 }
+/*
 // 标题滚动
 function titleFlash(msg) {
 
@@ -126,6 +129,7 @@ function titleFlash(msg) {
     // 设置定时间 300ms滚动
     rem.titflash = setInterval(function(){tit()}, 300);
 }
+*/
 // 暂停
 function audioPause() {
     rem.paused = true;      // 更新状态（已暂停）
@@ -463,11 +467,12 @@ mkpgb.prototype = {
 };  
 
 // 快捷键切歌，代码来自 @茗血(https://www.52benxi.cn/)
-document.onkeydown = function showkey(e) {
-    var key = e.keyCode || e.which || e.charCode;
+/*document.onkeydown = function showkey(e) {
+/    var key = e.keyCode || e.which || e.charCode;
     var ctrl = e.ctrlKey || e.metaKey;
     var isFocus = $('input').is(":focus");  
     if (ctrl && key == 37) playList(rem.playid - 1);    // Ctrl+左方向键 切换上一首歌
     if (ctrl && key == 39) playList(rem.playid + 1);    // Ctrl+右方向键 切换下一首歌
     if (key == 32 && isFocus == false) pause();         // 空格键 播放/暂停歌曲
 }
+*/
