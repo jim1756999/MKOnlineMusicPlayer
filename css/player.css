@@ -502,6 +502,7 @@ body {
     margin: auto;
 }
 
+/*
 .cover:after {
     content: "";
     position: absolute;
@@ -511,6 +512,7 @@ body {
     height: 180px;
     background: url(../images/album_cover_player.png) 0 0 no-repeat;
     pointer-events: none;
+*/
 }
 /* 歌曲封面图片 */
 .music-cover {
